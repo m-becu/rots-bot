@@ -4,8 +4,9 @@
 </h1>
 
 <h4 align="center">Handles the Serious Game "Rise Of The Sorceler" Discord implementation.</h4>
-![GitHub package.json version](https://img.shields.io/github/package-json/v/m-becu/rots-bot?color=green&logo=node.js&logoColor=green)
-![GitHub](https://img.shields.io/github/license/m-becu/rots-bot?label=licence)
+
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/m-becu/rots-bot?color=green&logo=node.js&logoColor=green)](https://github.com/m-becu/rots-bot/package.json)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # Overview
 ROTS is a serious-game application, running on both a Discord server and online as a website.
