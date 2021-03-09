@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/m-becu/rots-bot/issues"
   },
-  "homepage": "https://github.com/m-becu/rots-bot#readme"
+  "homepage": "https://github.com/m-becu/rots-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
