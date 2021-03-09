@@ -30,5 +30,17 @@ bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.username}`);
 });
 
+// Adding a "message" event listener
+bot.on('message', async message => {
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = args.slice(1);
+
+    // Command handling
+});
+
 // Login as Discord bot client
 bot.login(config.token);
