@@ -13,7 +13,10 @@
     "url": "https://github.com/m-becu/rots-bot/issues"
   },
   "scripts": {
-    "start": "node ./src/bot.js"
+    "start": "nodemon ./src/bot.js"
+  },
+  "nodemonConfig": {
+    "ignore": ["src/*.json"]
   },
   "homepage": "https://github.com/m-becu/rots-bot#readme",
   "dependencies": {
