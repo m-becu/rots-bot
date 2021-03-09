@@ -20,3 +20,15 @@ const config = require('./config.json');
 
 // Import libraries
 const Discord = require('discord.js');
+
+// Creating bot client
+const bot = new Discord.Client();
+
+// Start by adding an event listener "ready"
+// Log in console when bot is connected
+bot.on('ready', () => {
+    console.log(`Logged in as ${bot.user.username}`);
+});
+
+// Login as Discord bot client
+bot.login(config.token);
