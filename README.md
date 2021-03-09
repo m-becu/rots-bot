@@ -2,7 +2,9 @@
   <br>
   Rise Of The Sorceler - A Discord App
 </h1>
+
 <h4 align="center">Handles the Serious Game "Rise Of The Sorceler" Discord implementation.</h4>
+[![License](https://img.shields.io/github/license/m-becu/rots-bot?label=licence)](LICENSE)
 
 # Overview
 ROTS is a serious-game application, running on both a Discord server and online as a website.

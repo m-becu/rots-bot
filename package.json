@@ -1,0 +1,16 @@
+{
+  "name": "rots-bot",
+  "version": "0.0.1",
+  "description": "The node application that handles all bot functionnalities for the ROTS app.",
+  "main": "bot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-becu/rots-bot.git"
+  },
+  "author": "Anorak",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/m-becu/rots-bot/issues"
+  },
+  "homepage": "https://github.com/m-becu/rots-bot#readme"
+}
