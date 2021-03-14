@@ -16,10 +16,14 @@
     "start": "nodemon ./src/bot.js"
   },
   "nodemonConfig": {
-    "ignore": ["src/*.json"]
+    "ignore": [
+      "src/*.json"
+    ]
   },
   "homepage": "https://github.com/m-becu/rots-bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "crypto": "^1.0.1",
+    "discord.js": "^12.5.1",
+    "mysql": "^2.18.1"
   }
 }
