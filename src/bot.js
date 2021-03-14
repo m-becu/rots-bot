@@ -20,15 +20,53 @@ const config = require('./config.json');
 
 // Import libraries
 const Discord = require('discord.js');
+const MySQL = require('mysql');
+// Import system libraries
+const fs = require('fs');
 
 // Creating bot client
 const bot = new Discord.Client();
+bot.commands = new Discord.Collection();
+
+// Importing commands
+fs.readdir(__dirname + '/cmds/', (err, files) => {
+    if (err) console.error(err);
+
+    let jsfiles = files.filter(f => f.split(".").pop() === "js");
+    if (jsfiles.length <= 0) {
+        console.log("No commands to load!");
+        return;
+    }
+
+    console.log(`Loaded ${jsfiles.length} commmands.`);
+
+    jsfiles.forEach((f, i) => {
+        let props = require(`./cmds/${f}`);
+        console.log(`${i + 1}: ${f} loaded!`);
+        bot.commands.set(props.help.name, props);
+    });
+});
 
 // Start by adding an event listener "ready"
-// Log in console when bot is connected
-bot.on('ready', () => {
+bot.on('ready', async() => {
     console.log(`Logged in as ${bot.user.username}`);
 });
+
+// Log in console when bot is connected
+// Create connection to database
+/*
+var con = MySQL.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "rots"
+});
+
+con.connect(err => {
+    if (err) throw err;
+    console.log("Connected to database!");
+});
+*/
 
 // Adding a "message" event listener
 bot.on('message', async message => {
@@ -37,9 +75,13 @@ bot.on('message', async message => {
 
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
-    let args = args.slice(1);
+    let args = messageArray.slice(1);
 
-    // Command handling
+    if (!command.startsWith(config.prefix)) return;
+
+    let cmd = bot.commands.get(command.slice(config.prefix.length));
+    if (cmd) cmd.run(bot, message, args, /* con */);
+ 
 });
 
 // Login as Discord bot client
